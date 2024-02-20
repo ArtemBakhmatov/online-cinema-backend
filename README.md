@@ -23,6 +23,17 @@ nest g controller auth -> создали файл controller.ts в auth
 папка strategies -> стратегия авторизации
 папка decorations -> помогает получать текущего авторизованного юзера
 папка guards -> для защиты наших энпоинтов (например один энпоин для юзера, другой для админа другой для всех)
+
+Команды в командной строке windows:
+mongod --version -> какая версия установлена
+mongosh -> проверка запущен mongo или нет
+help -> показывает какие команды можно вводить
+use online-cinema-fullstack -> создание БД с названием online-cinema-fullstack
+
+Настройка и установка mongodb: ссылка на видео в ютуб (канал CS CORNER Sunita Rai)
+https://www.youtube.com/watch?v=PHXhuc8MwRw
+
+
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
