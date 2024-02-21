@@ -1,7 +1,14 @@
 /* eslint-disable prettier/prettier */
-import { Body, Controller, Post } from '@nestjs/common';
-
+import { 
+    Body, 
+    Controller, 
+    HttpCode, 
+    Post, 
+    UsePipes, 
+    ValidationPipe 
+} from '@nestjs/common';
 import { AuthService } from './auth.service';
+import { AuthDto } from './dto/auth.dto';
 
 @Controller('auth')
 export class AuthController {
@@ -9,8 +16,17 @@ export class AuthController {
 
     }
 
-    @Post('register')
-    async register(@Body() dto: any) {
+    @UsePipes(new ValidationPipe())
+    @HttpCode(200)      // выдает код 200 (при успешном запросе)
+    @Post('register')   // тут обычно 201 код выдает
+    async register(@Body() dto: AuthDto) {
         return this.AuthService.register(dto)
+    }
+
+    @UsePipes(new ValidationPipe())
+    @HttpCode(200)      // выдает код 200 (при успешном запросе)
+    @Post('login')      // тут обычно 201 код выдает
+    async login(@Body() dto: AuthDto) {
+        return this.AuthService.login(dto)
     }
 }

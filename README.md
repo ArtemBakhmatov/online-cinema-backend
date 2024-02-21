@@ -34,6 +34,18 @@ use online-cinema-fullstack -> создание БД с названием onlin
 https://www.youtube.com/watch?v=PHXhuc8MwRw
 
 
+установка зависимостей:
+1. npm i @nestjs/jwt --legacy-peer-deps
+2. npm i @nestjs/passport --legacy-peer-deps
+3. npm i class-validator --legacy-peer-deps (для валидации входных данных)
+4. npm i passport --legacy-peer-deps
+5. npm i passport-jwt --legacy-peer-deps
+6. npm install class-transformer --legacy-peer-deps (это требует class-validator без него ни как)
+7. npm i bcryptjs --legacy-peer-deps
+
+установка зависимостей в режиме разработки:
+1. npm i -D @types/bcryptjs --legacy-peer-deps (для шифрования нашего пароля)
+2. npm i -D @types/passport-jwt --legacy-peer-deps
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
