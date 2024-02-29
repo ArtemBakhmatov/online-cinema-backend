@@ -46,6 +46,16 @@ https://www.youtube.com/watch?v=PHXhuc8MwRw
 установка зависимостей в режиме разработки:
 1. npm i -D @types/bcryptjs --legacy-peer-deps (для шифрования нашего пароля)
 2. npm i -D @types/passport-jwt --legacy-peer-deps
+
+
+
+Тема этого урока:
+1. получение токенов с помощью отдельного этпоинта, нужен для того чтобы когда юзер находится в браузере 
+длительного времени, токен заканчивается и с помощью refreshToken сгенерировать новый токен и авторизация
+останется на месте (auth.controller.ts -> @Post('login/access-token')),
+(auth.service.ts -> getNewTokens()), то есть сделали endpoint для получения токенов
+2. guard -> это другими словами middleware, определенная защита для админа, для юзера и т.д.
+3. Кастомный декоратор для user (@User())
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
